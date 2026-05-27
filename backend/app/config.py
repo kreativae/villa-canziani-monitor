@@ -14,7 +14,9 @@ class Settings(BaseSettings):
     scraper_request_delay_min: float = 2.0  # seconds
     scraper_request_delay_max: float = 5.0
 
-    # Playwright
+    # Playwright — desativado por padrão (Render free tier)
+    # Setar PLAYWRIGHT_ENABLED=true em ambientes com Chromium instalado
+    playwright_enabled: bool = False
     playwright_headless: bool = True
     playwright_timeout_ms: int = 30_000
 
