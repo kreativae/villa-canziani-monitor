@@ -1,0 +1,28 @@
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.venv/
+**/venv/
+**/*.egg-info/
+
+# Env files (never commit secrets)
+**/.env
+**/.env.local
+**/.env.production
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.vercel/
+
+# Supabase CLI
+.supabase/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
