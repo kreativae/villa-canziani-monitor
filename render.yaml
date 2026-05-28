@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: villa-canziani-monitor
-    runtime: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
+    name: villa-canziani-monitor-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: SUPABASE_URL
         sync: false
@@ -12,7 +13,7 @@ services:
       - key: SUPABASE_ANON_KEY
         sync: false
       - key: PLAYWRIGHT_ENABLED
-        value: false
+        value: "false"
       - key: CORS_ORIGINS
         value: '["https://villa-canziani-monitor.vercel.app","http://localhost:3000"]'
     healthCheckPath: /health
